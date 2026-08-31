@@ -55,6 +55,8 @@ The selected features were divided into numerical and categorical variables to a
 
 Summary statistics and histograms were used to understand the distribution of the numerical variables.
 
+![Summary statistics](images/numerical%20summary%20statistics.png) 
+![Distributions](images/numerical%20distributions.png)  
 No concerning outliers or unusual patterns were identified in the distributions. However, the variables have different numerical scales, which highlights the need for feature scaling before applying K-Means.
 
 One notable observation is that a considerable number of customers have a balance of zero. This was kept as part of the original data, as it may represent a meaningful characteristic of certain customer segments.
@@ -63,6 +65,12 @@ One notable observation is that a considerable number of customers have a balanc
 
 Bar plots were used to examine the distribution of the categorical variables.
 
+![Barplot](images/CardType%20barplot.png) 
+![Barplot](images/Geography%20barplot.png)
+![Barplot](images/HarCrCard%20barplot.png)
+![Barplot](images/IsActiveMember%20barplot.png)
+![Barplot](images/NumOfProducts%20barplot.png)
+
 The largest customer group is located in France, and most customers have one product, a credit card, and active membership. Overall, the categorical variables show reasonable distributions without any obvious data quality issues.
 
 ### Correlation Analysis
@@ -70,6 +78,8 @@ The largest customer group is located in France, and most customers have one pro
 A correlation matrix was used to examine the relationships between the numerical variables.
 
 No strong correlations were identified between the selected numerical features, suggesting that there are no major multicollinearity issues that would require removing variables before applying the clustering algorithm.
+
+![Correlation matrix](images/correlation%20matrix.png)
 
 ## 6.- Data processing 
 The categorical features were transformed using One-Hot Encoding, converting each category into a numerical binary variable.
@@ -80,8 +90,17 @@ The numerical features were standardized using StandardScaler so that all variab
 
 The Elbow Method was used to determine the appropriate number of clusters. Different values of k were tested and their inertia was compared. Based on the point where the reduction in inertia started to decrease, 4 clusters were selected as a suitable balance between model simplicity and cluster separation.
 
+![Elbow method](images/elbow%20method.png)
+
 ## 8.- Clusters analysis 
 The resulting clusters were analyzed based on their average numerical features and customer size. The main characteristics of each segment are shown below.
+
+![Clusters](images/CardType%20vs%20Clusters.png)
+![Clusters](images/Geography%20vs%20clusters.png)
+![Clusters](images/HasCrCard%20vs%20clusters.png)
+![Clusters](images/IsActiveMember%20vs%20clusters.png)
+![Clusters](images/NumOfProducts%20vs%20clusters.png)
+![Clusters](images/cluster%20vs%20numerical%20features.png)
 
 ### Cluster 0: Established Customers
 
